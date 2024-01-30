@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Causal;
 use App\Models\Observation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;

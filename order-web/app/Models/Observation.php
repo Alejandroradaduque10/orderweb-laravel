@@ -10,4 +10,11 @@ class Observation extends Model
     use HasFactory;
     protected $table = 'observation';
     protected $fillable = ['description'];
+
+
+public function orders()
+    {
+    return$this->hasMany(Causal::class);
+    }
+
 }

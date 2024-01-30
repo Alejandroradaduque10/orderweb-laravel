@@ -15,7 +15,7 @@ class TypeActivity extends Model
     public function activities()
     {
         {
-            return$this->belongsTo(TypeActivity::class);
+            return$this->hasMany(TypeActivity::class);
          }
     }
     

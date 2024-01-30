@@ -19,7 +19,7 @@ class OrderActivity extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function actity()
+    public function activities()
 {
     return $this->belongsTo(Activity::class);
 }
