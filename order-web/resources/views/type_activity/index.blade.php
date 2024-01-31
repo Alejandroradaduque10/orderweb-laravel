@@ -4,7 +4,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 mb-4 d-grip gap-2 d-md-block">
-            <a href="{{ route('causal.create') }}" class="btn btn-primary">Crear</a>
+            <a href="{{ route('type_activity.create') }}" class="btn btn-primary">Crear</a>
         </div>
     </div>
 
@@ -22,8 +22,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>causal</td>
-                        <td>causal de prueba</td>
+                        <td>actividades </td>
+                        <td> actividades de prueba</td>
                         <td>
                             <a href="#" title="editar" class="btn btn-info btn-circle btn-sm">
                                 <i class="far fa-edit"></i>
