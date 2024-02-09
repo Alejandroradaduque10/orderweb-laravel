@@ -12,7 +12,8 @@
                     <div class="col-lg-12 mb-4">
                         <label for="description">Descripción</label>
                         <input type="text" class="form-control"
-                        id="observation " name="observation" required>
+                        id="observation " name="observation" required 
+                        value="{{ $type_activity['description'] }}">
                     </div>
 
                 </div>

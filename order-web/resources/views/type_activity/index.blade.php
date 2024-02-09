@@ -22,13 +22,13 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>actividades </td>
-                        <td> actividades de prueba</td>
+                        <td>{{ $typeactivitys['id'] }} </td>
+                        <td>{{ $typeactivitys['description'] }}</td>
                         <td>
-                            <a href="#" title="editar" class="btn btn-info btn-circle btn-sm">
+                            <a href="{{ route('type_activity.edit',$typeactivitys['id'] ) }}" title="editar" class="btn btn-info btn-circle btn-sm">
                                 <i class="far fa-edit"></i>
                             </a>
-                            <a href="#" title="eliminar" class="btn btn-danger btn-circle btn-sm" onclick="return remove()">
+                            <a href="{{ route('type_activity.destroy',$typeactivitys['id'] ) }}" title="eliminar" class="btn btn-danger btn-circle btn-sm" onclick="return remove()">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>

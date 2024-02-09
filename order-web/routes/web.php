@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CausalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,17 +22,38 @@ Route::get('/test2', function () {
     return view('test2');
 })->name('test2');
 
-Route::get('/causal/create', function () {
-    return view('causal.create');
-})->name('causal.create');
+Route::prefix('causal')->group(function(){
+    Route::get('/index', [CausalController::class,'index'])->name('causal.index');
+    Route::get('/create', [CausalController::class,'create'])->name('causal.create');
+    Route::get('/edit/{id}', [CausalController::class,'edit'])->name('causal.edit');
+    Route::post('/create', [CausalController::class,'store'])->name('causal.store');
+    Route::put('/edit/{id}', [CausalController::class,'update'])->name('causal.update');
+    Route::get('/destroy/{id}', [CausalController::class,'destroy'])->name('causal.destroy');
 
-Route::get('/causal/index', function () {
-    return view('causal.index');
-})->name('causal.index');
+});
 
-Route::get('/causal/edit', function () {
-    return view('causal.edit');
-})->name('causal.edit');
+Route::prefix('observation')->group(function(){
+    Route::get('/index', [CausalController::class,'index'])->name('observation.index');
+    Route::get('/create', [CausalController::class,'create'])->name('observation.create');
+    Route::get('/edit/{id}', [CausalController::class,'edit'])->name('observation.edit');
+    Route::post('/create', [CausalController::class,'store'])->name('observation.store');
+    Route::put('/edit/{id}', [CausalController::class,'update'])->name('observation.update');
+    Route::get('/destroy/{id}', [CausalController::class,'destroy'])->name('observation.destroy');
+
+});
+
+Route::prefix('typea_ctivity')->group(function(){
+    Route::get('/index', [CausalController::class,'index'])->name('type_activity.index');
+    Route::get('/create', [CausalController::class,'create'])->name('type_activity.create');
+    Route::get('/edit/{id}', [CausalController::class,'edit'])->name('type_activity.edit');
+    Route::post('/create', [CausalController::class,'store'])->name('type_activity.store');
+    Route::put('/edit/{id}', [CausalController::class,'update'])->name('type_activity.update');
+    Route::get('/destroy/{id}', [CausalController::class,'destroy'])->name('type_activity.destroy');
+
+});
+
+
+
 
 Route::get('/observation/create', function () {
     return view('observation.create');

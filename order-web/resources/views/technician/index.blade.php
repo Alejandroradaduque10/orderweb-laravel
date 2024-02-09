@@ -52,7 +52,7 @@
         });
 
         function remove(){
-            if{ confirm("¿Esta seguro de elimanar el registro?")}
+            if{ confirm("¿Esta seguro de eliminar el registro?")}
                return true;
             else
               return false;

@@ -20,7 +20,7 @@
                         <input type="text" class="form-control"
                         id="name" name="name" required>
                     </div>
-
+                    
                 </div>
 
                 <div class="row form-group">
@@ -30,7 +30,7 @@
                           "form-control " id="phone" required>
                         </select>
                     </div>
-
+                    
                     <div class="col-lg-6 mb-4">
                         <label for="especiality">Tipo</label>
                         <select name="text" id="espeliality" class="
@@ -38,9 +38,9 @@
                         <option value="">Seleccione</option>
                         </select>
                     </div>
-
+                    
     
-
+                    
                 </div>
 
                 <div class="row form-group">
