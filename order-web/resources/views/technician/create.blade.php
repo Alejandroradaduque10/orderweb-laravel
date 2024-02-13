@@ -5,9 +5,8 @@
     @include('templates.messages')
     <div class="row">
         <div class="col-lg-12 mb-4">
-            <form action="#" method="POST">
+            <form action="{{ route('technician.store')  }}" method="POST">
                 @csrf
-                
                 <div class="row form-group">
                     <div class="col-lg-6 mb-4">
                         <label for="document">Documento</label>
@@ -33,10 +32,10 @@
                     
                     <div class="col-lg-6 mb-4">
                         <label for="especiality">Tipo</label>
-                        <select name="text" id="espeliality" class="
+                        <input name="text" id="espeliality" class="
                         form-control" required>
                         <option value="">Seleccione</option>
-                        </select>
+                        
                     </div>
                     
     
