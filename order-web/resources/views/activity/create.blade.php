@@ -28,14 +28,24 @@
                         <select name="technician_id" id="technician_id" class="
                         form-control" required>
                         <option value="">Seleccione</option>
+                        @foreach ($technicians as $technician)
+                            <option value="{{ $technician['document'] }}">
+                                {{ $technician['name'] }}
+                            </option>
+                        @endforeach
                         </select>
                     </div>
-
+                    
                     <div class="col-lg-6 mb-4">
                         <label for="type_id">Tipo</label>
                         <select name="type_id" id="type_id" class="
                         form-control" required>
                         <option value="">Seleccione</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type['id'] }}">
+                                {{ $technician['description'] }}
+                            </option>
+                        @endforeach
                         </select>
                     </div>
 

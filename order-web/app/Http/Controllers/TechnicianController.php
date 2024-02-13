@@ -13,7 +13,7 @@ class TechnicianController extends Controller
     public function index()
     {
         $technicians = Technician::all();
-        return view('technician.index', compact('technician'));
+        return view('technician.index', compact('technicians'));
     }
 
     /**
