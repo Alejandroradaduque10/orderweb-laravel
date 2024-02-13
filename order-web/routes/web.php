@@ -75,19 +75,19 @@ Route::prefix('activity')->group(function(){
 
 });
 
+Route::prefix('order')->group(function(){
+    Route::get('/index', [TechnicianController::class,'index'])->name('order.index');
+    Route::get('/create', [TechnicianController::class,'create'])->name('order.create');
+    Route::get('/edit/{id}', [TechnicianController::class,'edit'])->name('order.edit');
+    Route::post('/create', [TechnicianController::class,'store'])->name('order.store');
+    Route::put('/edit/{id}', [TechnicianController::class,'update'])->name('order.update');
+    Route::get('/destroy/{id}', [TechnicianController::class,'destroy'])->name('order.destroy');
+    Route::get('/add_activity/{order_id}/{activity_id}', [TechnicianController::class,'add_activity'])->name('order.add_activity');
+    Route::get('/remove_activty/{order_id}/{activity_id}', [TechnicianController::class,'remove_acivity'])->name('order.remove_activity');
+
+});
 
 
-Route::get('/order/create', function () {
-    return view('order.create');
-})->name('order.create');
-
-Route::get('/order/index', function () {
-    return view('order.index');
-})->name('order.index');
-
-Route::get('/order/edit', function () {
-    return view('order.edit');
-})->name('order.edit');
 
 
 
