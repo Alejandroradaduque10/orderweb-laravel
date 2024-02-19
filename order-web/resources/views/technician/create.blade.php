@@ -11,13 +11,15 @@
                     <div class="col-lg-6 mb-4">
                         <label for="document">Documento</label>
                         <input type="numbers" class="form-control"
-                        id="document " name="document" required>
+                        id="document " name="document" required
+                        value="{{ old(numbers) }}">
                         
                     </div>
                     <div class="col-lg-6 mb-4">
                         <label for="name">Nombre</label>
                         <input type="text" class="form-control"
-                        id="name" name="name" required>
+                        id="name" name="name" required
+                        value="{{ old(name) }}">
                     </div>
                     
                 </div>
@@ -26,14 +28,16 @@
                     <div class="col-lg-6 mb-4">
                         <label for="phone">Telefono</label>
                         <select name="numbers" id="phone" class=
-                          "form-control " id="phone" required>
+                          "form-control " id="phone" required
+                          value="{{ old(phone) }}">
                         </select>
                     </div>
                     
                     <div class="col-lg-6 mb-4">
                         <label for="especiality">Tipo</label>
                         <input name="text" id="espeliality" class="
-                        form-control" required>
+                        form-control" required
+                        value="{{ old(especiality) }}">
                         <option value="">Seleccione</option>
                         
                     </div>

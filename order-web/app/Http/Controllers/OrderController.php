@@ -72,7 +72,7 @@ class OrderController extends Controller
         if ($validator->fails())
         {
             $errors = $validator->errors();
-            return redirect()->route('order.create')->withInput()->withErrors($errors);
+            return redirect()->route('order.edit')->withInput()->withErrors($errors);
         }
 
         $order = Order::create($request->all());

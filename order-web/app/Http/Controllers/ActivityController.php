@@ -6,9 +6,28 @@ use App\Models\Activity;
 use App\Models\Technician;
 use App\Models\TypeActivity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Vite;
 
 class ActivityController extends Controller
 {
+    private $rules = [
+        'description' => 'required|string|max:100|min:3', 
+        'hours' => 'required | numeric|max:9999999999|min:1',
+        'technician_id' => 'required|numeric|max:99999999999999999999',
+        'type_id' => 'required|numeric|max:99999999999999999999',
+    
+    ];
+
+    private $traductionAttributes = [
+        'description' => 'descripción',
+        'hours'=> 'horas',
+        'technician_id'=> 'tecnico',
+        'type_id' => 'tipo'
+    ];
+
+
     /**
      * Display a listing of the resource.
      */
@@ -36,6 +55,14 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
+        $validator= Validator::make($request->all(), $this->rules);
+        $validator->setAttributeNames($this->traductionAttributes);
+        if($validator->fails())
+        {
+            $errors = $validator->errors();
+            return redirect()->route('activity.create')->withInput()->withErrors($errors);
+        }
+
         $activity = Activity::create($request->all());
         session()->flash('message', 'Registro insertado exitosamente');
         return redirect()->route('activity.index');
@@ -72,6 +99,17 @@ class ActivityController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $validator= Validator::make($request->all(), $this->rules);
+        $validator->setAttributeNames($this->traductionAttributes);
+
+        if($validator->fails())
+        {
+            $errors = $validator->errors();
+            return redirect()->route('activity.edit',$id)->withInput()->withErrors($errors);
+        }
+
+        
+        
         $activity = Activity::find($id);
         if($$activity) // si la causal existe
         {
