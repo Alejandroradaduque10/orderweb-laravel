@@ -18,13 +18,15 @@ class OrderController extends Controller
         'address' => 'required|string|max:50|min:3',
         'city' => 'required|string|max:50|min:3',
         'causal_id' => 'required|numeric',
+        'observation_id'=>'numeric',
     ];
 
     private $traductionAttributes = array(
         'legalization_date' => 'fecha de legalización',
         'address' => 'dirección',
         'city' => 'ciudad',
-        'causal_id' => 'causal' 
+        'causal_id' => 'causal' ,
+        'observation_id'=> 'observación',
     );
 
        

@@ -10,9 +10,9 @@ class TechnicianController extends Controller
 {
     private $rules = [
         'document'=>'required|integer|max:999999999999999999',
-        'name' => 'required|string|max:100|min:3', 
-        'especiality' => 'required | numeric|max:9999999999|min:1',
-        'phone' => 'required|numeric|max:99999999999999999999',
+        'name' => 'required|string|max:80|min:3', 
+        'especiality' => 'required | numeric|max:50|min:1',
+        'phone' => 'string|max:30',
 
     ];
     private $traductionAttributes = array(
